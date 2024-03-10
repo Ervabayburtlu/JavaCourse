@@ -1,0 +1,43 @@
+
+//What is Armstrong number?
+// Armstrong number is a number  which forms the total of the same number, 
+//when each of its digits is raised to the power of the number of digits in the number.
+//Such as 1634, 1^4+6^4+3^4+4^4=1+1296+81+256=1634
+
+import java.util.Scanner;
+public class Deneme {
+public static void main(String[]args)
+{
+		
+Scanner scanner=new Scanner(System.in);
+System.out.println("Enter number:");
+int number=scanner.nextInt();
+System.out.println("Enter digit of number:");
+int digit_number=scanner.nextInt();
+
+int temporary_number=number;  // 
+int sum=0;
+
+do {
+	int digit_value =temporary_number%10; //every step  we get lower digits of number to higher digits 
+	                                      //1634%10=4 ,163%10=3,16%10=6,1%10=1
+	temporary_number/=10;                 //1634/10=163,163/10=16,16/10=1
+	
+	
+	sum+=Math.pow(digit_value,digit_number);//math.pow is a function that can power of numbers
+			                                //1^4+6^4+3^4+4^4=1634
+}
+
+while(temporary_number>0);
+
+if(number==sum)
+{
+	System.out.println("This number is a Armstrong number");
+}
+
+else
+	System.out.println("This number isn't a Armstrong number");
+
+}
+	
+}
